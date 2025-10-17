@@ -57,11 +57,13 @@ Clone the repository:
 Bash
 
 git clone https://github.com/your-username/your-repo-name.git
+
 Navigate to the project directory:
 
 Bash
 
 cd your-repo-name
+
 Open in your browser: Open the signup.html or login.html file in your preferred web browser to begin. That's it!
 
 💡 How It Works
