@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="icon" type="image/png" href="icon.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="content">
+    <div class="parent">
+
+      <!-- Sidebar -->
+      <div class="div1">
+        <div class="user">
+          <img src="user.png" alt="">
+          <div class="name" id="displayName">Username</div>
+        </div>
+
+        <nav class="menu">
+          <a href="#" class="active">🏠 Dashboard</a>
+          <a href="#">📅 Calendar</a>
+          <a href="#">🌟 Important</a>
+          <a href="#">⚙️ Settings</a>
+          <a href="#" id="logoutBtn">🚪 Logout</a>
+        </nav>
+      </div>
+
+      <!-- Main task area -->
+      <div class="div3">
+        <h2 class="section-title">My Tasks</h2>
+
+        <div class="tasks-container" id="tasksContainer">
+          <div class="task">
+            <div class="checkbox-wrapper">
+              <input type="checkbox" id="task1" class="input">
+              <label for="task1" class="checkbox" title="Mark as done">
+                <svg viewBox="0 0 18 18">
+                  <path
+                    d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+                  </path>
+                  <polyline points="1 9 7 14 15 4"></polyline>
+                </svg>
+              </label>
+              <label for="task1" class="label">Finish DSA assignment</label>
+            </div>
+
+            <!-- Task action buttons -->
+            <div class="task-actions">
+              <button class="star-btn" title="Mark as important">☆</button>
+              <button class="delete-btn" title="Delete task">🗑</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="button" id="addTaskBtn">
+          <button id="addTaskBtn" title="Add a new task">Add Task</button>
+        </div>
+      </div>
+
+      <!-- Bottom Email Section -->
+      <div class="div2">
+        <div class="email">
+          <img src="user.png" alt="">
+          <div class="emailname">user@gmail.com</div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="div4">
+        <footer>&copy; 2025 Your Company Name</footer>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="taskModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close-btn">&times;</button>
+      <h3 id="modalTaskName"></h3>
+      <p id="modalTaskDescription"></p>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

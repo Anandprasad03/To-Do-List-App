@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Task</title>
+  <link rel="icon" type="image/png" href="icon.jpg">
+  <link rel="stylesheet" href="task-style.css">
+  <link rel="icon" type="image/png" href="icon.jpg">
+</head>
+
+<body>
+  <div class="form-container">
+    <h2 class="form-title">Add a New Task</h2>
+    <form action="index.html" id="addTaskForm">
+      <div class="form-group">
+        <label for="taskName">Task Name</label>
+        <input type="text" id="taskName" name="taskName" placeholder="e.g., Finish project report" required>
+      </div>
+      <div class="form-group">
+        <label for="taskDescription">Description (Optional)</label>
+        <textarea id="taskDescription" name="taskDescription" rows="4"
+          placeholder="Add more details about the task..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="dueDate">Due Date</label>
+        <input type="date" id="dueDate" name="dueDate">
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="save-btn">Save Task</button>
+        <a href="index.html" class="cancel-btn">Cancel</a>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

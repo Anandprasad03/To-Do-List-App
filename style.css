@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  width: 720px;
+  height: 620px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 25px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.content:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.4);
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-template-rows: 5fr 1fr;
+  height: 100%;
+  padding: 15px;
+  gap: 12px;
+}
+
+.parent>div {
+  border-radius: 18px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Sidebar */
+.div1 {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.menu a {
+  color: #e3e3e3;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  transform: translateX(6px);
+}
+
+/* Task Section */
+.div3 {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section-title {
+  font-size: 1.4em;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.tasks-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.tasks-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tasks-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+
+
+.checkbox-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-wrapper .input {
+  display: none;
+  visibility: hidden;
+}
+
+.checkbox-wrapper .checkbox {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
+}
+
+.checkbox-wrapper .checkbox:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(34, 50, 84, 0.03);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.checkbox-wrapper .checkbox svg {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #888;
+  stroke-width: 1.5;
+  transition: all 0.2s ease;
+}
+
+.checkbox-wrapper .checkbox svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+.checkbox-wrapper .checkbox svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+
+.checkbox-wrapper .checkbox:hover:before {
+  opacity: 1;
+}
+
+.checkbox-wrapper .checkbox:hover svg {
+  stroke: #066d61;
+}
+
+.checkbox-wrapper .input:checked+.checkbox svg {
+  stroke: #04700f;
+}
+
+.checkbox-wrapper .input:checked+.checkbox svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+
+.checkbox-wrapper .input:checked+.checkbox svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+.task {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task:hover .task-actions {
+  opacity: 1;
+}
+
+.task-actions button {
+  background: transparent;
+  border: none;
+  color: #e0e0e0;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.task-actions button:hover {
+  color: #fff;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.task:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+}
+
+/* Button */
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+button {
+  padding: 12px 30px;
+  font-size: 1em;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #14b8a6, #6a11cb);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #6a11cb, #14b8a6);
+  transform: translateY(-3px);
+}
+
+/* Email & Footer */
+.div2,
+.div4 {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.email img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.emailname {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+footer {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+/* --- Modal Styles (Add to the end of style.css) --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: rgba(43, 44, 76, 0.85);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 90%;
+  max-width: 500px;
+  color: #fff;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-content h3 {
+  font-size: 1.6em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 1em;
+  line-height: 1.6;
+  opacity: 0.9;
+  white-space: pre-wrap;
+  /* Preserves line breaks from the textarea */
+}
+
+/* Add a pointer cursor to tasks to show they are clickable */
+.task-info {
+  cursor: pointer;
+  flex-grow: 1;
+}
